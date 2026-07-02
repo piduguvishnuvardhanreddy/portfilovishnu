@@ -1,0 +1,173 @@
+.contact-section {
+  background: relative;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.contact-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.contact-detail-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  padding: 16px 20px;
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.contact-detail-card:hover {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-detail-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+}
+
+.contact-detail-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+a.detail-value {
+  transition: var(--transition);
+}
+
+a.detail-value:hover {
+  color: var(--secondary);
+}
+
+/* Premium Dark Themed Map Container */
+.map-container {
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  line-height: 0;
+}
+
+.map-container iframe {
+  filter: grayscale(1) invert(0.9) contrast(1.2);
+  transition: var(--transition);
+}
+
+.map-container:hover iframe {
+  filter: grayscale(0.2) invert(0) contrast(1);
+}
+
+/* Contact Form Container */
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-submit-btn {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.form-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.form-status.success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.form-status.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

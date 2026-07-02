@@ -1,0 +1,81 @@
+.education-section {
+  background: relative;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.education-card {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+
+.edu-icon-wrap {
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.edu-meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.edu-year, .edu-cgpa {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.edu-cgpa {
+  color: var(--secondary);
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+.edu-degree {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.edu-college {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+@media (max-width: 576px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

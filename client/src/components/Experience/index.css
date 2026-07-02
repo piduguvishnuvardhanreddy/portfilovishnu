@@ -1,0 +1,140 @@
+.experience-section {
+  background: relative;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Vertical Timeline Line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 50px;
+  position: relative;
+  width: 100%;
+}
+
+/* Stagger right and left */
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-darker);
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-dot {
+  border-color: var(--secondary);
+  color: var(--secondary);
+  box-shadow: 0 0 15px var(--secondary-glow);
+  transform: translateX(-50%) scale(1.1);
+}
+
+.timeline-date {
+  width: 50%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+  justify-content: flex-start;
+}
+
+.date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  padding: 6px 14px;
+  border-radius: 20px;
+  height: fit-content;
+}
+
+.timeline-content {
+  width: 50%;
+  position: relative;
+}
+
+.timeline-role {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.timeline-company {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Responsive configurations for Timeline */
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+    padding-left: 50px;
+    margin-bottom: 40px;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    top: 0;
+  }
+
+  .timeline-date {
+    width: 100%;
+    justify-content: flex-start !important;
+    padding: 0 0 15px 0;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+}

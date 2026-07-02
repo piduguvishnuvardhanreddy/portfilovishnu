@@ -1,0 +1,377 @@
+.admin-login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: calc(var(--navbar-height) + 40px);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.login-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-icon {
+  color: var(--primary);
+}
+
+.login-header h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.login-header p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-dim);
+}
+
+.pass-input {
+  padding-left: 42px;
+  padding-right: 42px;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle:hover {
+  color: #fff;
+}
+
+.login-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+}
+
+/* --- Admin Dashboard Layout --- */
+.admin-section {
+  padding-top: calc(var(--navbar-height) + 20px);
+}
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.admin-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-glass);
+  padding-bottom: 20px;
+}
+
+.admin-title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.admin-subtitle-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.logout-btn {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+/* Tab Controls styling */
+.admin-nav-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.tab-btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border-glass-hover);
+  color: #fff;
+}
+
+.tab-btn.active {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* CRUD Admin Lists */
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.add-item-btn {
+  align-self: flex-start;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+.admin-list-card, .admin-item-card {
+  padding: 20px 25px;
+}
+
+.admin-list-card.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sub-detail {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.admin-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.admin-card-header h4 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.admin-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.edit-btn {
+  color: var(--secondary);
+}
+
+.edit-btn:hover {
+  background: var(--secondary);
+  color: #fff;
+  border-color: var(--secondary);
+}
+
+.delete-btn {
+  color: #f87171;
+}
+
+.delete-btn:hover {
+  background: #f87171;
+  color: #fff;
+  border-color: #f87171;
+}
+
+/* Messages listing specific styles */
+.message-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.msg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.msg-date {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.msg-sender {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.msg-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.msg-body {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: rgba(5, 5, 8, 0.3);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border-glass);
+}
+
+.no-items-card {
+  padding: 50px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* --- Admin Form Layout --- */
+.admin-form-card {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.form-title-h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-wrap input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-wrap label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+/* Advanced File upload styled overlay input */
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.upload-btn-card {
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .admin-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .logout-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

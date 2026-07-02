@@ -1,0 +1,30 @@
+# node_modules
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment configurations (credentials)
+.env
+server/.env
+client/.env.local
+
+# Build outputs
+dist/
+client/dist/
+client/build/
+
+# Server uploads folder
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
