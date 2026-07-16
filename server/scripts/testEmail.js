@@ -7,25 +7,23 @@ dotenv.config({ path: path.join(__dirname, '../.env') });
 const sendEmail = require('../utils/sendEmail');
 
 async function runTest() {
-  console.log('--- Email Configuration Test ---');
-  console.log('EMAIL_USER:', process.env.EMAIL_USER);
-  console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? '******** (Provided)' : '(Not Provided)');
+  console.log('--- Resend API Email Configuration Test ---');
+  console.log('RESEND_API_KEY:', process.env.RESEND_API_KEY ? '******** (Provided)' : '(Not Provided)');
   console.log('EMAIL_RECEIVER:', process.env.EMAIL_RECEIVER);
-  console.log('--------------------------------');
+  console.log('-------------------------------------------');
 
-  if (!process.env.EMAIL_PASS || process.env.EMAIL_PASS === 'YOUR_16_DIGIT_GOOGLE_APP_PASSWORD') {
-    console.log('Result: SKIPPED. Please replace YOUR_16_DIGIT_GOOGLE_APP_PASSWORD in your .env file with your real 16-digit App Password, then run this test.');
+  if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 'YOUR_RESEND_API_KEY') {
+    console.log('Result: SKIPPED. Please replace YOUR_RESEND_API_KEY in your .env file with your real Resend API Key, then run this test.');
     return;
   }
 
   try {
-    console.log('Sending test email...');
+    console.log('Sending test email via Resend...');
     const result = await sendEmail({
-      subject: 'Portfolio Contact Form Test Email',
+      subject: 'Resend API Integration Test Email',
       html: `
-        <h1>Test Email Successful!</h1>
-        <p>This email verifies that your portfolio's contact form email configuration is fully functional.</p>
-        <p><strong>Configured Sender:</strong> ${process.env.EMAIL_USER}</p>
+        <h1>Resend Email Integration Successful!</h1>
+        <p>This email verifies that your portfolio's contact form email configuration is fully functional using Resend.</p>
         <p><strong>Configured Receiver:</strong> ${process.env.EMAIL_RECEIVER}</p>
       `
     });
@@ -33,7 +31,7 @@ async function runTest() {
     console.log('Message Info:', result);
   } catch (error) {
     console.error('Result: FAILED');
-    console.error('Error Details:', error);
+    console.error('Error Details:', error.message || error);
   }
 }
 

@@ -1,38 +1,38 @@
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 
 /**
- * Send an email notification using Nodemailer
+ * Send an email notification using Resend API (HTTP-based)
  * @param {Object} options - Options containing subject, html content
  */
 const sendEmail = async (options) => {
-  // Check if email credentials are set and are not placeholder values
+  // Check if Resend API Key is set and not a placeholder
   if (
-    !process.env.EMAIL_USER ||
-    !process.env.EMAIL_PASS ||
-    (process.env.EMAIL_USER === 'vr982802@gmail.com' && process.env.EMAIL_PASS === 'YOUR_16_DIGIT_GOOGLE_APP_PASSWORD')
+    !process.env.RESEND_API_KEY ||
+    process.env.RESEND_API_KEY === 'YOUR_RESEND_API_KEY'
   ) {
-    console.warn('Email notification skipped: EMAIL_USER or EMAIL_PASS environment variables are not configured with active credentials.');
+    console.warn('Email notification skipped: RESEND_API_KEY environment variable is not configured with active credentials.');
     return { success: false, skipped: true };
   }
 
-  // Create transporter
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+  // Initialize Resend with API Key
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
+  // Note: On free/unverified Resend tier, the 'from' email MUST be 'onboarding@resend.dev'
+  // and the 'to' email must be your registered account email (vr982802@gmail.com).
   const mailOptions = {
-    from: `"Portfolio Contact Form" <${process.env.EMAIL_USER}>`,
+    from: 'Portfolio Contact Form <onboarding@resend.dev>',
     to: process.env.EMAIL_RECEIVER || 'vr982802@gmail.com',
     subject: options.subject || 'New Portfolio Contact Form Submission',
     html: options.html,
   };
 
-  const info = await transporter.sendMail(mailOptions);
-  return { success: true, messageId: info.messageId };
+  const { data, error } = await resend.emails.send(mailOptions);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return { success: true, messageId: data.id };
 };
 
 module.exports = sendEmail;
