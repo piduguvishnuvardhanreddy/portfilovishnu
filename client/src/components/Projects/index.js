@@ -5,31 +5,64 @@ import './index.css';
 
 const DEFAULT_PROJECTS = [
   {
-    title: 'E-Commerce Cloud Engine',
-    description: 'A distributed e-commerce backend built with Node.js, Express, and MongoDB, leveraging Redis for caching and Stripe for payments. Designed for high scalability and throughput.',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
-    technologies: ['Node.js', 'Express', 'MongoDB', 'Redis', 'Docker', 'Stripe'],
-    githubLink: 'https://github.com',
-    liveLink: 'https://example.com',
+    title: 'Student Academic Performance Prediction',
+    description:
+      'An AI-powered web application that predicts student academic performance using machine learning techniques. The platform provides an intuitive interface for entering student data, generating performance predictions, and visualizing insights to help educators and students make data-driven decisions.',
+    image:
+      'https://res.cloudinary.com/dmaipoa99/image/upload/v1784286631/ChatGPT_Image_Jul_17_2026_03_59_57_PM_yex5py.png',
+    technologies: [
+      'React.js',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Machine Learning',
+      'Python'
+    ],
+    githubLink:
+      'https://github.com/piduguvishnuvardhanreddy/studentperformanceprediction',
+    liveLink:
+      'https://studentperformanceprediction-naq7pey32.vercel.app/',
     featured: true
   },
   {
-    title: 'DevMeetup Planner',
-    description: 'A full-stack React and GraphQL meetup organizer platform where developers can join events, form groups, share calendars, and interact using an in-app chat room.',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80',
-    technologies: ['React.js', 'GraphQL', 'Apollo', 'Express', 'MongoDB'],
-    githubLink: 'https://github.com',
-    liveLink: 'https://example.com',
+    title: 'Fleet Management System',
+    description:
+      'A comprehensive fleet management platform designed to streamline logistics operations. The system enables vehicle tracking, shipment management, driver monitoring, route planning, and real-time operational insights through a modern, responsive dashboard.',
+    image:
+      'https://res.cloudinary.com/dmaipoa99/image/upload/v1784286624/ChatGPT_Image_Jul_17_2026_04_02_54_PM_j6pa2x.png',
+    technologies: [
+      'React.js',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'JWT',
+      'Tailwind CSS'
+    ],
+    githubLink:
+      'https://github.com/piduguvishnuvardhanreddy/finallogisticsvishnufrontend',
+    liveLink:
+      'https://cargovishnufinalfrontend.vercel.app/',
     featured: true
   },
   {
-    title: 'Creative Studio Portfolio',
-    description: 'A modern, highly immersive frontend portfolio featuring complex layouts, smooth WebGL transitions, and micro-interactions optimized for low-bandwidth mobile screens.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'GSAP', 'Vite'],
-    githubLink: 'https://github.com',
-    liveLink: 'https://example.com',
-    featured: false
+    title: 'HRMS Dashboard',
+    description:
+      'A modern Human Resource Management System (HRMS) dashboard that simplifies employee management, attendance tracking, leave requests, payroll administration, and organizational analytics with an intuitive and responsive user interface.',
+    image:
+      'https://res.cloudinary.com/dmaipoa99/image/upload/v1784286612/ChatGPT_Image_Jul_17_2026_04_03_00_PM_lgzha8.png',
+    technologies: [
+      'React.js',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'JWT',
+      'Tailwind CSS'
+    ],
+    githubLink:
+      'https://github.com/piduguvishnuvardhanreddy/vishnutechhrms',
+    liveLink:
+      'https://vishnutechhrms-dfvkeul9l-vishnus-projects-1e046f50.vercel.app',
+    featured: true
   }
 ];
 
@@ -58,22 +91,22 @@ const Projects = () => {
 
   const filteredProjects = projects.filter((project) => {
     if (filter === 'All') return true;
-    
+
     const techs = project.technologies.map(t => t.toLowerCase());
-    
+
     if (filter === 'Full Stack') {
-      return (techs.includes('react.js') || techs.includes('react') || techs.includes('next.js')) && 
-             (techs.includes('node.js') || techs.includes('node') || techs.includes('express') || techs.includes('graphql'));
+      return (techs.includes('react.js') || techs.includes('react') || techs.includes('next.js')) &&
+        (techs.includes('node.js') || techs.includes('node') || techs.includes('express') || techs.includes('graphql'));
     }
-    
+
     if (filter === 'Frontend') {
       return techs.includes('react.js') || techs.includes('react') || techs.includes('html5') || techs.includes('css3') || techs.includes('vite') || techs.includes('next.js');
     }
-    
+
     if (filter === 'Backend') {
       return techs.includes('node.js') || techs.includes('node') || techs.includes('express') || techs.includes('graphql') || techs.includes('mongodb') || techs.includes('redis');
     }
-    
+
     return true;
   });
 
@@ -101,7 +134,7 @@ const Projects = () => {
             </div>
           ))}
         </div>
-        
+
         {filteredProjects.length === 0 && (
           <div className="no-projects">
             <p>No projects found in this category.</p>
