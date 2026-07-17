@@ -134,15 +134,9 @@ const educations = [
 const certificates = [
   {
     title: 'MERN Full Stack Developer Certification',
-    issuer: 'Udemy Academy',
-    date: 'Dec 2023',
-    image: 'https://drive.google.com/uc?export=view&id=1NLwpia94eGV0W5AVh2Fx_rpmmTtbXfkd'
-  },
-  {
-    title: 'AWS Certified Cloud Practitioner',
-    issuer: 'Amazon Web Services',
-    date: 'Aug 2024',
-    image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=800&q=80'
+    issuer: 'Nxtwave Academy',
+    date: 'Dec 2025',
+    image: 'https://res.cloudinary.com/dmaipoa99/image/upload/v1783013122/ChatGPT_Image_Jul_2_2026_10_12_39_PM_yx6ppu.png'
   }
 ];
 

@@ -8,7 +8,7 @@ const DEFAULT_CERTIFICATES = [
     title: 'MERN Full Stack Developer Certification',
     issuer: 'Udemy Academy',
     date: 'Dec 2023',
-    image: 'https://images.unsplash.com/photo-1589330694653-ded6df03f754?auto=format&fit=crop&w=800&q=80'
+    image: 'https://res.cloudinary.com/dmaipoa99/image/upload/v1783013122/ChatGPT_Image_Jul_2_2026_10_12_39_PM_yx6ppu.png'
   },
   {
     title: 'AWS Certified Cloud Practitioner',
